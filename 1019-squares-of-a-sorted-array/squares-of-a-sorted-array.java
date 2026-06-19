@@ -3,11 +3,11 @@ class Solution {
     public int[] sortedSquares(int[] arr) {
         int size=arr.length;
         int f=0;
-        int t=0;
-        while(t<size){
-            arr[f]=(arr[t]*arr[t]);
+        // int t=0;
+        while(f<size){
+            arr[f]=(arr[f]*arr[f]);
             f++;
-            t++;
+            // t++;
         }
         Arrays.sort(arr);
         return arr;
