@@ -1,15 +1,22 @@
-import java.util.Arrays;
 class Solution {
-    public int[] sortedSquares(int[] arr) {
-        int size=arr.length;
-        int f=0;
-        // int t=0;
-        while(f<size){
-            arr[f]=(arr[f]*arr[f]);
-            f++;
-            // t++;
+    public int[] sortedSquares(int[] nums) {
+        int n = nums.length;
+        int l = 0;
+        int r = n - 1;
+        int bt = n - 1;
+        int[] res = new int[n];
+        while (l <= r) {
+            int lsq = nums[l] * nums[l];
+            int rsq = nums[r] * nums[r];
+            if(lsq>rsq){
+                res[bt] = lsq;
+                l++;
+            }else{
+                res[bt] = rsq;
+                r--;
+            }
+            bt--;
         }
-        Arrays.sort(arr);
-        return arr;
+        return res;
     }
 }
